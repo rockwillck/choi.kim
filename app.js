@@ -122,6 +122,27 @@ function scrolled() {
         document.getElementById("all").style.position = "fixed";
         document.getElementById("all").style.top = `0px`;
     }
+
+    if (document.getElementById("pipe").getBoundingClientRect().top < window.innerHeight*0.8) {
+        document.getElementById("pipe").classList.add("expanded")
+        document.getElementById("pipeText").classList.add("expanded")
+    } else {
+        document.getElementById("pipe").classList.remove("expanded")
+        document.getElementById("pipeText").classList.remove("expanded")
+    }
+
+    if (document.getElementById("pfdgn").getBoundingClientRect().top < window.innerHeight*0.8) {
+        document.getElementById("pfdgnChild").style.transform = "rotateX(40deg) scaleX(1.3)"
+    } else {
+        document.getElementById("pfdgnChild").style.transform = ""
+    }
+
+
+    if (document.getElementById("gettouch").getBoundingClientRect().top < window.innerHeight*0.8) {
+        document.getElementById("gettouch").classList.add("ringing")
+    } else {
+        document.getElementById("gettouch").classList.remove("ringing")
+    }
 }
 
 window.addEventListener("scroll", scrolled)

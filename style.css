@@ -244,6 +244,7 @@ a {
 	text-decoration: underline;
 	text-decoration-color: var(--accent-color);
 }
+
 b {
 	color: var(--main-color);
 	position: relative;
@@ -258,4 +259,49 @@ b:after {
 	border: solid 2px black;
 	border-radius: 100%;
 	rotate: 5deg;
+}
+
+#pipe {
+	position: absolute;
+	font-size: 2px;
+	bottom: 0;
+	right: 0;
+	width: fit-content;
+	scale: 1 0;
+	transition: 0.2s;
+	transform-origin: bottom;
+}
+#pipe.expanded {
+	scale: 1 1;
+}
+#pipeText {
+	display: inline-block;
+	transition: 0.2s;
+}
+#pipeText.expanded {
+	translate: 0 -20px;
+}
+
+#pfdgn {
+	perspective: 800px;
+}
+#pfdgnChild {
+	transition: 0.4s;
+}
+
+@keyframes gt {
+	0% {
+		translate: -3px 0;
+		rotate: -2deg;
+	}
+	50% {
+		translate: 3px 0;
+	}
+	100% {
+		translate: -3px 0;
+		rotate: 2deg;
+	}
+}
+.ringing {
+	animation: gt 0.1s 5;
 }
