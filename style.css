@@ -61,7 +61,7 @@ body {
 	background-size: 1.3rem 1.3rem;
 	background-position: 0 0, 0.65rem 0.65rem;
 	width: calc(100% - var(--hero-padding) * 2);
-	height: calc(100vh - var(--hero-padding) * 2);
+	height: calc(95vh - var(--hero-padding) * 2);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -206,7 +206,7 @@ body {
 .content {
 	color: var(--text-color);
 	position: absolute;
-	top: 100vh;
+	top: 95vh;
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
