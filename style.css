@@ -206,7 +206,7 @@ body {
 .content {
 	color: var(--text-color);
 	position: absolute;
-	top: 95vh;
+	top: 100vh;
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
