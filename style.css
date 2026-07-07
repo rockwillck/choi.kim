@@ -1,0 +1,246 @@
+:root {
+	--main-color: rgb(65, 0, 255);
+	--accent-color: rgb(255, 220, 0);
+	--hero-padding: 6vmin;
+	--float-bezier: cubic-bezier(.81,1.5,.59,.86);
+	--bg-color: white;
+	--text-color: black;
+}
+body {
+	margin: 0;
+	font-family: 'Tanker', sans-serif;
+	background-color: var(--bg-color);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-color); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
+}
+
+
+.hiddenMsg {
+	position: absolute;
+	z-index: -1;
+	opacity: 0.3;
+	color: white;
+}
+
+#all {
+	box-sizing: border-box;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+}
+.buffer {
+	height: 200vh;
+	position: absolute;
+	left: 0;
+	top:0;
+	width: 10px;
+}
+
+.hero {
+	box-sizing: border-box;
+	background-color: var(--main-color);
+	background-size: 1.3rem 1.3rem;
+	background-position: 0 0, 0.65rem 0.65rem;
+	width: calc(100% - var(--hero-padding) * 2);
+	height: calc(100vh - var(--hero-padding) * 2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	border-radius: calc(min(var(--hero-padding), 20px));
+	position: absolute;
+	left: var(--hero-padding);
+	top: var(--hero-padding);
+	mix-blend-mode: multiply;
+	mask: radial-gradient(11.66px at 50% calc(100% - 16px),#000 99%,#0000 101%) calc(50% - 20px) 0/40px 100%, radial-gradient(11.66px at 50% calc(100% + 6px),#0000 99%,#000 101%) 50% calc(100% - 10px)/40px 100% repeat-x;
+
+	margin: 0;
+}
+.heroNameContainer {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	background-color: var(--accent-color);
+	width: 200px;
+	height: 170px;
+	position: relative;
+	translate: -1em 0;
+	box-shadow: 0px 0px 0px var(--accent-color), 0px 2px 0px var(--main-color),0px 3px 0px var(--accent-color), 0px 4px 0px var(--main-color),0px 5px 0px var(--accent-color);
+	transition: translate 0.7s ease-in, rotate 0.2s ease-in-out;
+	transform-origin: right top;
+}
+.heroName {
+	display:flex;
+	position: absolute;
+	right: 0;
+	padding:0px 5px 5px 0px;
+	margin:0;
+	box-sizing:border-box;
+}
+.hn2 {
+	bottom:0;
+}
+.hn2 {
+	transform-origin: right bottom;
+	rotate: 90deg;
+
+}
+.heroNameInner.raised {
+	rotate: 0deg;
+	text-shadow: 0px 0px 0px var(--accent-color), 0px 2px 0px var(--main-color),0px 3px 0px var(--accent-color), 0px 4px 0px var(--main-color),0px 5px 0px var(--accent-color);
+	translate: 0px 0px;
+}
+.heroNameInner {
+	font-size: 60px;
+	font-weight:bold;
+	color: var(--main-color);
+	-webkit-text-stroke: 2px var(--accent-color);	
+	text-shadow: none;
+	translate: 0px 5px;
+	transition:0.2s;
+	margin: 0px;
+	text-align: center;
+}
+
+@keyframes swing {
+	0% {
+		rotate: -5deg;
+	}
+	50% {
+		rotate: 5deg;
+	}
+	100% {
+		rotate: -5deg;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		padding-bottom: 0px;
+	}
+	50% {
+		padding-bottom: 10px;
+	}
+	100% {
+		padding-bottom: 0px;
+	}
+}
+
+.heroNameInner:hover {
+	rotate: -5deg;
+	scale: 1.1;
+}
+
+.heroSub {
+	color: var(--main-color);
+	background-color: var(--accent-color);
+	padding:3px;
+	width: 100%;
+}
+
+.halftoneOverlay {
+	z-index:-2;
+	position: absolute;
+	width:100vw;
+	height:100vh;
+	left:0;
+	top:0;
+	overflow: hidden;
+}
+.halftoneOverlay > img {
+	width: 100vw;
+	height: 100vh;
+	left:50%;
+	top:50%;
+	translate: -50% -50%;
+	opacity:0.1;
+	scale:4;
+}
+
+.duckContainer {
+	position: absolute;
+	bottom: 200%;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	width:30px;
+	animation: swing 1s infinite;
+	transition: 5s left ease-in-out, 0.2s scale, 2s bottom var(--float-bezier);
+	filter: drop-shadow(-1px -1px 0px var(--main-color)) drop-shadow(1px -1px 0px var(--main-color)) drop-shadow(-1px 1px 0px var(--main-color)) drop-shadow(1px 1px 0px var(--main-color));
+}
+.baby {
+	width: 20px;
+}
+
+.scrolldown {
+	position: absolute;
+	bottom: -100px;
+	left: 30px;
+	color: white;
+	font-size: 30px;
+	transition: 2s var(--float-bezier);
+
+	border-radius: 100vmin;
+
+	animation: bounce 1s infinite;
+}
+
+.content {
+	color: var(--text-color);
+	position: absolute;
+	top: 100vh;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	font-size:30px;
+	padding: 25px;
+	box-sizing: border-box;
+}
+
+h1 {
+	color: var(--main-color);
+	font-size: 60px;
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	margin: 0;
+	margin-top: 30px;
+}
+
+p {
+	margin: 0;
+	max-width: 500px;
+}
+
+footer {
+	font-size: 15px;
+	margin-top: 50px;
+}
+
+a {
+	font-style: italic;
+	/* color: var(--main-color); */
+	text-decoration: underline;
+	text-decoration-color: var(--accent-color);
+}
