@@ -270,6 +270,7 @@ b:after {
 	scale: 1 0;
 	transition: 0.2s;
 	transform-origin: bottom;
+	line-height: 2px;
 }
 #pipe.expanded {
 	scale: 1 1;
@@ -279,14 +280,14 @@ b:after {
 	transition: 0.2s;
 }
 #pipeText.expanded {
-	translate: 0 -30px;
+	translate: 0 -25px;
 }
 
 #pfdgn {
 	perspective: 800px;
 }
 #pfdgnChild {
-	transition: 0.4s;
+	transition: 0.3s cubic-bezier(.5,2,.6,.9);
 }
 
 @keyframes gt {

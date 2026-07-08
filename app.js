@@ -132,7 +132,7 @@ function scrolled() {
     }
 
     if (document.getElementById("pfdgn").getBoundingClientRect().top < window.innerHeight*0.8) {
-        document.getElementById("pfdgnChild").style.transform = "rotateX(40deg) scaleX(1.15)"
+        document.getElementById("pfdgnChild").style.transform = "rotateX(50deg) scaleX(1.1)"
     } else {
         document.getElementById("pfdgnChild").style.transform = ""
     }
