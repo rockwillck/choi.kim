@@ -279,7 +279,7 @@ b:after {
 	transition: 0.2s;
 }
 #pipeText.expanded {
-	translate: 0 -26px;
+	translate: 0 -30px;
 }
 
 #pfdgn {
