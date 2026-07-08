@@ -263,7 +263,7 @@ b:after {
 
 #pipe {
 	position: absolute;
-	font-size: 1.5px;
+	font-size: 2px;
 	bottom: 0;
 	right: 0;
 	width: fit-content;
