@@ -271,6 +271,7 @@ b:after {
 	transition: 0.2s;
 	transform-origin: bottom;
 	line-height: 2px;
+	font-weight: 600;
 }
 #pipe.expanded {
 	scale: 1 1;
