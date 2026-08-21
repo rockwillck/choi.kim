@@ -123,6 +123,12 @@ function scrolled() {
         document.getElementById("all").style.top = `0px`;
     }
 
+    if (document.getElementById("products") && document.getElementById("products").getBoundingClientRect().top < window.innerHeight*0.8) {
+        document.getElementById("products").classList.add("active")
+    } else if (document.getElementById("products")) {
+        document.getElementById("products").classList.remove("active")
+    }
+
     if (document.getElementById("pipe").getBoundingClientRect().top < window.innerHeight*0.8) {
         document.getElementById("pipe").classList.add("expanded")
         document.getElementById("pipeText").classList.add("expanded")
@@ -145,4 +151,15 @@ function scrolled() {
     }
 }
 
+function updateBuffer() {
+    const content = document.querySelector(".content");
+    const buffer = document.querySelector(".buffer");
+    if (content && buffer) {
+        const totalHeight = window.innerHeight + content.offsetHeight + 100;
+        buffer.style.height = `${Math.max(window.innerHeight * 2, totalHeight)}px`;
+    }
+}
+
 window.addEventListener("scroll", scrolled)
+window.addEventListener("resize", updateBuffer)
+window.addEventListener("load", updateBuffer)
