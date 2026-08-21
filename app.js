@@ -160,6 +160,33 @@ function updateBuffer() {
     }
 }
 
+document.querySelectorAll(".productRow").forEach(row => {
+    row.addEventListener("mouseenter", () => {
+        setTimeout(updateBuffer, 380);
+    });
+    row.addEventListener("mouseleave", () => {
+        setTimeout(updateBuffer, 380);
+    });
+    row.addEventListener("click", (e) => {
+        if (e.target.closest("a")) {
+            return;
+        }
+        const wasActive = row.classList.contains("active");
+        document.querySelectorAll(".productRow").forEach(r => r.classList.remove("active"));
+        if (!wasActive) {
+            row.classList.add("active");
+        }
+        setTimeout(updateBuffer, 380);
+    });
+});
+
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".productRow")) {
+        document.querySelectorAll(".productRow").forEach(r => r.classList.remove("active"));
+        setTimeout(updateBuffer, 380);
+    }
+});
+
 window.addEventListener("scroll", scrolled)
 window.addEventListener("resize", updateBuffer)
 window.addEventListener("load", updateBuffer)
