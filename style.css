@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Tanker';
+	src: url('Tanker-Regular.ttf') format('truetype');
+}
+
 :root {
 	--main-color: rgb(65, 0, 255);
 	--accent-color: rgb(255, 220, 0);
